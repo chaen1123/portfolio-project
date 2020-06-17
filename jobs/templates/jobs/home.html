@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ja" >
+  <head>
+    <title>アルバムサンプル for Bootstrap · Bootstrap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="album.css" rel="stylesheet">
+    <link href="../example.css" rel="stylesheet">
+  </head>
+  <body >
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+  <div class="container">
+    <span class="skiplink-text">Skip to main content</span>
+  </div>
+</a>
+
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#">Masashi Chaen</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+              <a class="nav-item nav-link" href="#">Twitter</a>
+              <a class="nav-item nav-link" href="#">Resume</a>
+              <a class="nav-item nav-link" href="#">Blog</a>
+            </div>
+          </div>
+        </nav>
+  </header>
+
+<main role="main">
+
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Hi! I'm Masashi.</h1>
+      <p class="lead text-muted">Hey! my name is Masashi Chaen and Ilove to make Django websites. It's the thrill of handling the requests the people want!</p>
+      <p>
+        <a href="mailto:chaenmasashi@gmail.com" class="btn btn-primary my-2">Email me</a>
+      </p>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        {% for job in jobs.all %}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="card-img-top" src="{{ job.image.url }}"/>
+            <div class="card-body">
+              <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+              <p class="card-text">{{ job.summary }}</p>
+
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="text-muted">
+  <div class="container text-center">
+    <p>CopyRight Masashi Chaen {% now "Y" %}</p>
+  </div>
+</footer>
+
+<script src="../../assets/js/vendor/holder.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script>
+  window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery-slim.min.js"><\/script>')
+</script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script><script src="/docs/4.5/assets/js/vendor/anchor.min.js"></script>
+<script src="/docs/4.5/assets/js/vendor/clipboard.min.js"></script>
+<script src="/docs/4.5/assets/js/vendor/bs-custom-file-input.min.js"></script>
+<script src="/docs/4.5/assets/js/src/application.js"></script>
+<script src="/docs/4.5/assets/js/src/search.js"></script>
+<script src="/docs/4.5/assets/js/src/ie-emulation-modes-warning.js"></script>
+  </body>
+</html>
